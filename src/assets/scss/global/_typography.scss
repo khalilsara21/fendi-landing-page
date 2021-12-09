@@ -1,76 +1,83 @@
-$font-family: Arial, sans-serif;
+@font-face {
+  font-family: "ProximaNova Regular";
+  src: url("../../fonts/ProximaNova/ProximaNovaRegular.ttf") format("ttf"),
+    url("../../fonts/ProximaNova/ProximaNovaRegular.woff") format("woff");
+  font-style: normal;
+}
 
-$font-weight-normal: normal;
-$font-weight-bold: bold;
+@font-face {
+  font-family: "ProximaNova Bold";
+  src: url("../../fonts/ProximaNova/ProximaNovaBold.otf") format("otf");
+  font-style: normal;
+}
 
-$font-size-20: 1.25rem;
-$font-size-14: 0.875rem;
-$font-size-12: 0.75rem;
+$font-family-regular: "ProximaNova Regular", sans-serif;
+$font-family-bold: "ProximaNova Bold", sans-serif;
 
-$letter-spacing-120: 120;
-$letter-spacing-100: 100;
+$font-weight-500: 500;
+$font-weight-600: 600;
 
-$line-height-22: 1.38;
-$line-height-17: 1.0625;
-$line-height-16: 1;
-$line-height-12: 0.75;
+$font-size-22: 22px;
+$font-size-20: 20px;
+$font-size-18: 18px;
+$font-size-14: 14px;
+$font-size-12: 12px;
+$font-size-11: 11px;
+
+$line-height-24: 24px;
+$line-height-22: 22px;
+$line-height-20: 20px;
+$line-height-17: 17px;
+$line-height-14: 14px;
 
 @mixin font-h1() {
-  font-family: $font-family;
-  font-weight: $font-weight-normal;
-  font-size: $font-size-20;
-  letter-spacing: $letter-spacing-120;
+  font-family: $font-family-bold;
+  font-weight: $font-weight-500;
+  font-size: $font-size-22;
+  letter-spacing: 2.64px;
   line-height: $line-height-22;
   text-transform: uppercase;
 }
 
 @mixin font-h2() {
-  font-family: $font-family;
-  font-weight: $font-weight-normal;
+  font-family: $font-family-bold;
   font-size: $font-size-20;
-  letter-spacing: $letter-spacing-100;
-  line-height: $line-height-16;
+  line-height: $line-height-24;
 }
 
 @mixin font-h3() {
-  font-family: $font-family;
-  font-weight: $font-weight-normal;
+  font-family: $font-family-regular;
   font-size: $font-size-14;
-  letter-spacing: $letter-spacing-100;
-  line-height: $line-height-16;
+  line-height: $line-height-20;
 }
 
 @mixin font-p() {
-  font-family: $font-family;
-  font-weight: $font-weight-normal;
+  font-family: $font-family-bold;
   font-size: $font-size-12;
-  letter-spacing: $letter-spacing-100;
-  line-height: $line-height-16;
+  letter-spacing: 1px;
+  line-height: $line-height-17;
 }
 
 @mixin font-a() {
-  font-family: $font-family;
-  font-weight: $font-weight-bold;
+  font-family: $font-family-regular;
+  font-weight: $font-weight-600;
   font-size: $font-size-12;
-  letter-spacing: $letter-spacing-100;
+  line-height: $line-height-17;
   text-transform: uppercase;
 }
 
 @mixin font-a-underline() {
-  font-family: $font-family;
-  font-weight: $font-weight-bold;
+  font-family: $font-family-bold;
+  font-weight: $font-weight-500;
   font-size: $font-size-12;
-  letter-spacing: $letter-spacing-100;
   text-transform: uppercase;
   text-decoration: underline;
 }
 
 @mixin font-span() {
-  font-family: $font-family;
-  font-weight: $font-weight-bold;
+  font-family: $font-family-bold;
+  font-weight: $font-weight-500;
   font-size: $font-size-12;
-  letter-spacing: $letter-spacing-100;
-  line-height: $line-height-12;
 }
 
 h1,
@@ -79,8 +86,10 @@ h3,
 h4,
 h5,
 h6,
-p {
+p,
+span {
   margin: 0;
+  color: $f-dark_grey;
 }
 
 h1 {

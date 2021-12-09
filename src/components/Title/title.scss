@@ -1,13 +1,21 @@
 @import "../../assets/scss/global/style.scss";
 
 .title-container {
-  padding: $spacer-28;
+  padding: $spacer-28 $spacer-18;
 
   .title {
-    margin-bottom: $spacer-8;
+    max-width: 330px;
+    margin: auto auto $spacer-8 auto;
   }
 
   .subtitle {
-    margin: $spacer-16;
+    margin: $spacer-16 0;
+  }
+
+  @media (min-width: $breakpoint-small) {
+    padding: $spacer-28 $spacer-16 $spacer-49;
+    .title {
+      max-width: unset;
+    }
   }
 }

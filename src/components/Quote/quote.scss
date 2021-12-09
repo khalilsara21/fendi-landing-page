@@ -1,13 +1,32 @@
 @import "../../assets/scss/global/style.scss";
 
 .quote-container {
-  padding: $spacer-28;
+  padding: $spacer-28 $spacer-18;
 
-  .title {
-    margin-bottom: $spacer-8;
+  > * {
+    color: $f-super_dark_grey;
   }
 
-  .subtitle {
-    margin: $spacer-16;
+  .title {
+    font-size: $font-size-22;
+  }
+
+  .quote {
+    margin: $spacer-8 0;
+    font-size: $font-size-18;
+    line-height: $line-height-22;
+    letter-spacing: 2.16px;
+    font-family: $font-family-bold;
+  }
+
+  .author {
+    margin-top: $spacer-10;
+    letter-spacing: 1px;
+    color: $f-dark_grey;
+    font-size: $font-size-12;
+  }
+
+  @media (min-width: $breakpoint-medium) {
+    padding: $spacer-83 $spacer-80 $spacer-59;
   }
 }

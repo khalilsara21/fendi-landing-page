@@ -2,41 +2,63 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import PropTypes from "prop-types";
 
+//Utils
+import { useWindowSize } from "../../utils/useWindowSize";
+
 //Style
 import "./carousel.scss";
 
 function Carousel({
   carousel,
   arrow,
+  dotnav,
   description,
   title,
   fullSlider,
   autoplay,
 }) {
+  const windowSize = useWindowSize();
+  const isMobile = windowSize.innerWidth < 640;
+  const isDesktop = windowSize.innerWidth > 959;
+
   return (
-    <div className={`carousel ${fullSlider && "full-slider"}`}>
+    <div className={`carousel ${fullSlider && !isMobile && "full-slider"}`}>
       {title && (
         <h2 className="uk-text-center uk-text-uppercase title">{title}</h2>
       )}
-      <div className="uk-flex">
+      <div className={`uk-flex content`}>
         <div
-          className={`uk-position-relative uk-visible-toggle uk-width-expand`}
+          className={`uk-position-relative uk-visible-toggle ${
+            isMobile ? "" : "uk-width-expand"
+          }`}
           tabIndex="-1"
-          data-uk-slider={`sets: true; autoplay: ${autoplay}`}
+          data-uk-slider={`sets: ${!isMobile}; autoplay: ${autoplay}`}
         >
-          <ul className="uk-slider-items uk-child-width-1-2 uk-grid-small">
-            {carousel.map((item) => (
-              <li
-                key={item.id}
-                className="uk-transition-toggle uk-transition-opaque"
-              >
-                <img src={item.image} alt={item.name} />
-                <div className="uk-position-center" />
-              </li>
-            ))}
+          <ul
+            className={`uk-slider-items ${
+              isMobile ? "uk-grid" : "uk-child-width-1-2 uk-grid-small"
+            }`}
+          >
+            {carousel.map((item) =>
+              isMobile ? (
+                <li key={item.id} className="uk-width-4-5">
+                  <div className="uk-panel">
+                    <img src={item.image} alt={item.name} />
+                  </div>
+                </li>
+              ) : (
+                <li key={item.id}>
+                  <img src={item.image} alt={item.name} />
+                </li>
+              )
+            )}
           </ul>
 
-          {arrow && (
+          {dotnav && !isDesktop && (
+            <ul className="uk-slider-nav uk-dotnav uk-flex-center uk-margin"></ul>
+          )}
+
+          {arrow && isDesktop && (
             <>
               <a
                 className="uk-position-center-left uk-position-small uk-hidden-hover"
@@ -54,7 +76,11 @@ function Carousel({
           )}
         </div>
         {description && (
-          <div className="uk-width-auto uk-margin-auto uk-margin-auto-vertical uk-text-center description">
+          <div
+            className={`uk-margin-auto uk-margin-auto-vertical uk-text-center description ${
+              isMobile ? "" : "uk-width-auto"
+            }`}
+          >
             <h2>{description}</h2>
           </div>
         )}
@@ -68,12 +94,14 @@ Carousel.propTypes = {
   arrow: PropTypes.bool.isRequired,
   fullSlider: PropTypes.bool,
   autoplay: PropTypes.bool,
+  dotnav: PropTypes.bool.isRequired,
 };
 
 Carousel.defaultProps = {
   arrow: false,
   fullSlider: false,
   autoplay: false,
+  dotnav: false,
 };
 
 export default Carousel;

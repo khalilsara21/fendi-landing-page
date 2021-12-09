@@ -4,17 +4,18 @@
 .uk-container {
   padding-left: $spacer-15;
   padding-right: $spacer-15;
+  max-width: calc(1200px - $spacer-30);
 }
 
 //Button
 .uk-button {
   width: 100%;
-  max-width: 200px;
   height: 100%;
-  min-height: 33px;
+  min-height: 43px;
   padding: 8px;
   @include font-a();
   line-height: $line-height-17;
+  cursor: pointer;
 
   &-primary {
     background: $f-orange;
@@ -35,6 +36,11 @@
       }
     }
   }
+
+  @media (min-width: $breakpoint-small) {
+    max-width: 200px;
+    min-height: 33px;
+  }
 }
 
 //Badge
@@ -44,4 +50,18 @@
   background-color: $f-light_grey;
   color: $f-dark_grey !important;
   min-height: 21px;
+  @include font-p();
+}
+
+//Slidenav
+.uk-slidenav {
+  background: $f-white;
+  padding: 15px 20px;
+  margin-top: 0;
+  margin-bottom: 0;
+  color: $f-dark_grey !important;
+
+  &-next {
+    margin: 0;
+  }
 }

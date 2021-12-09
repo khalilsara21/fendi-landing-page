@@ -27,12 +27,12 @@ import banner_bottom from "../../assets/images/banner-bottom.png";
 
 function Main() {
   const windowSize = useWindowSize();
-  const isMobile = windowSize.innerWidth < 960;
+  const isDesktop = windowSize.innerWidth > 959;
 
   return (
     <>
-      {/* <Header /> */}
-      <div className={`${!isMobile ? "uk-container" : ""}`}>
+      <Header />
+      <div className={`${isDesktop ? "uk-container" : ""}`}>
         <Banner image={banner_top} image_alt="Fendi Banner Top" />
         <Title
           align="center"
@@ -55,6 +55,7 @@ function Main() {
         <Carousel
           carousel={CAROUSEL_BOTTOM}
           arrow={true}
+          dotnav={true}
           fullSlider={true}
           title="Explore the looks"
         />
@@ -65,7 +66,7 @@ function Main() {
           author="KIM JONES"
         />
       </div>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }

@@ -1,31 +1,84 @@
 @import "../../assets/scss/global/style.scss";
 
 .carousel {
-  margin-left: -$spacer-14;
-  padding: $spacer-28 $spacer-0;
+  padding: $spacer-28 0 0;
 
   .title {
     margin-bottom: $spacer-40;
+    line-height: $line-height-22;
+    color: $f-super_dark_grey;
   }
 
-  .uk-grid-small > * {
-    padding-left: $spacer-14;
-  }
+  .content {
+    flex-direction: column;
 
-  &.full-slider {
-    margin-left: $spacer-0;
+    .uk-slider {
+      margin-left: $spacer-18;
 
-    .uk-grid-small > * {
-      padding-left: $spacer-0;
+      .uk-grid-small > * {
+        padding-left: $spacer-14;
+      }
+
+      &.full-slider {
+        margin-left: 0;
+
+        .uk-grid-small > * {
+          padding-left: 0;
+        }
+      }
+    }
+
+    .description {
+      max-width: 350px;
+      padding: $spacer-56 $spacer-48;
+
+      h2 {
+        text-transform: uppercase;
+        color: $f-super_dark_grey;
+      }
     }
   }
 
-  .description {
-    max-width: 350px;
-    padding: 0 $spacer-48;
+  @media (min-width: $breakpoint-small) {
+    margin-left: -$spacer-14;
+    padding: $spacer-28 0;
 
-    h2 {
-      text-transform: uppercase;
+    .content {
+      flex-direction: row;
+      margin: 0 $spacer-18;
+
+      .uk-slider {
+        margin-left: 0;
+      }
+
+      .uk-dotnav {
+        margin-left: 0;
+      }
+
+      .description {
+        max-width: 280px;
+        padding: 0 $spacer-18;
+      }
+    }
+  }
+
+  @media (min-width: $breakpoint-medium) {
+    padding: 0;
+
+    .content {
+      margin: 0;
+
+      .uk-slider {
+        &.full-slider {
+          margin-left: 0;
+          margin-right: $spacer-14;
+        }
+      }
+
+      .description {
+        max-width: 340px;
+        padding: 0 $spacer-48;
+      }
     }
   }
 }

@@ -1,16 +1,44 @@
 @import "../../assets/scss/global/style.scss";
 
 .editorial-banner {
-  padding: $spacer-28 0;
   flex-direction: column-reverse;
 
   .quote-container {
     background-color: $f-beige;
     justify-content: center;
-    padding: $spacer-40;
+    padding: $spacer-56 $spacer-18;
+
+    .quote {
+      margin: $spacer-10;
+      font-size: $font-size-20;
+      letter-spacing: unset;
+    }
+
+    .author {
+      color: $f-super_dark_grey;
+      font-size: $font-size-14;
+    }
   }
 
   @media (min-width: $breakpoint-small) {
+    padding: $spacer-28 0;
     flex-direction: row;
+    img {
+      max-width: 50%;
+    }
+  }
+
+  @media (min-width: $breakpoint-medium) {
+    padding: $spacer-59 0 $spacer-50;
+
+    img {
+      max-width: 100%;
+    }
+  }
+
+  @media (min-width: $breakpoint-large2) {
+    .quote-container {
+      padding: $spacer-40;
+    }
   }
 }

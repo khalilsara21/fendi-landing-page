@@ -9,14 +9,22 @@ import Item from "./Item/item";
 
 function Gallery({ items }) {
   const windowSize = useWindowSize();
-  const isMobile = windowSize.innerWidth < 960;
+  const isMobile = windowSize.innerWidth < 640;
+  const isDesktop = windowSize.innerWidth > 959;
+
+  function getChildWidth() {
+    let width = "";
+    if (isMobile) width = "uk-child-width-1-2";
+    else if (isDesktop) width = "uk-child-width-1-4";
+    else width = "uk-child-width-1-3 uk-flex-center";
+
+    return width;
+  }
+
+  const childWidth = getChildWidth();
 
   return (
-    <div
-      className={`uk-grid uk-text-center gallery ${
-        isMobile ? "uk-child-width-1-2" : "uk-child-width-1-4"
-      }`}
-    >
+    <div className={`uk-grid uk-text-center gallery ${childWidth}`}>
       {items.map((item) => (
         <Item
           key={item.id}

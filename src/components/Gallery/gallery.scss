@@ -1,9 +1,26 @@
 @import "../../assets/scss/global/style.scss";
 
 .gallery {
-  padding: $spacer-28 $spacer-8 !important;
+  padding: $spacer-28 0 !important;
+  max-width: calc(100%);
+  margin-left: 0 !important;
+  margin-right: $spacer-30 !important;
 
-  @media (min-width: $breakpoint-small) {
-    padding: $spacer-28 0 !important;
+  @media (min-width: $breakpoint-medium) {
+    padding: $spacer-50 0 $spacer-151 !important;
+    margin-right: 0 !important;
+    margin-left: -$spacer-22 !important;
+    min-width: calc(100% + $spacer-22);
+
+    > * {
+      padding-left: $spacer-22 !important;
+    }
+  }
+
+  @media (min-width: $breakpoint-large2) {
+    img {
+      max-width: unset;
+      min-width: calc(100%);
+    }
   }
 }
