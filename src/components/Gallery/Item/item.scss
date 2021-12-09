@@ -1,0 +1,17 @@
+@import "../../../assets/scss/global/style.scss";
+
+.item {
+  padding-bottom: $spacer-40;
+
+  .name {
+    margin-top: $spacer-14;
+  }
+
+  .price {
+    margin-top: $spacer-22;
+  }
+
+  .badge {
+    margin-top: $spacer-8;
+  }
+}

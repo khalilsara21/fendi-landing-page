@@ -1,0 +1,9 @@
+@import "../../assets/scss/global/style.scss";
+
+.gallery {
+  padding: $spacer-28 $spacer-8 !important;
+
+  @media (min-width: $breakpoint-small) {
+    padding: $spacer-28 0 !important;
+  }
+}

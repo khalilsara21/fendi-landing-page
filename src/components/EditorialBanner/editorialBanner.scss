@@ -1,0 +1,16 @@
+@import "../../assets/scss/global/style.scss";
+
+.editorial-banner {
+  padding: $spacer-28 0;
+  flex-direction: column-reverse;
+
+  .quote-container {
+    background-color: $f-beige;
+    justify-content: center;
+    padding: $spacer-40;
+  }
+
+  @media (min-width: $breakpoint-small) {
+    flex-direction: row;
+  }
+}

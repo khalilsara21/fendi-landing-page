@@ -1,0 +1,13 @@
+@import "../../assets/scss/global/style.scss";
+
+.title-container {
+  padding: $spacer-28;
+
+  .title {
+    margin-bottom: $spacer-8;
+  }
+
+  .subtitle {
+    margin: $spacer-16;
+  }
+}

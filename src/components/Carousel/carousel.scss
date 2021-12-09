@@ -1,0 +1,31 @@
+@import "../../assets/scss/global/style.scss";
+
+.carousel {
+  margin-left: -$spacer-14;
+  padding: $spacer-28 $spacer-0;
+
+  .title {
+    margin-bottom: $spacer-40;
+  }
+
+  .uk-grid-small > * {
+    padding-left: $spacer-14;
+  }
+
+  &.full-slider {
+    margin-left: $spacer-0;
+
+    .uk-grid-small > * {
+      padding-left: $spacer-0;
+    }
+  }
+
+  .description {
+    max-width: 350px;
+    padding: 0 $spacer-48;
+
+    h2 {
+      text-transform: uppercase;
+    }
+  }
+}

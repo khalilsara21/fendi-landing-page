@@ -1,0 +1,11 @@
+@import "../../assets/scss/global/style.scss";
+
+.banner {
+  height: 350px;
+  object-fit: cover;
+
+  @media (min-width: $breakpoint-small) {
+    height: inherit;
+    object-fit: unset;
+  }
+}
