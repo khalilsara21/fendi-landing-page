@@ -20,6 +20,11 @@
     }
   }
 
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
   @media (min-width: $breakpoint-small) {
     padding: $spacer-28 0;
     flex-direction: row;

@@ -33,6 +33,7 @@ function Carousel({
           }`}
           tabIndex="-1"
           data-uk-slider={`sets: ${!isMobile}; autoplay: ${autoplay}`}
+          role="slider"
         >
           <ul
             className={`uk-slider-items ${
@@ -47,8 +48,16 @@ function Carousel({
                   </div>
                 </li>
               ) : (
-                <li key={item.id}>
-                  <img src={item.image} alt={item.name} />
+                <li
+                  key={item.id}
+                  className="uk-inline-clip uk-transition-toggle"
+                  tabIndex="0"
+                >
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    className="uk-transition-scale-up uk-transition-opaque"
+                  />
                 </li>
               )
             )}
@@ -92,16 +101,18 @@ function Carousel({
 Carousel.propTypes = {
   carousel: PropTypes.array.isRequired,
   arrow: PropTypes.bool.isRequired,
-  fullSlider: PropTypes.bool,
-  autoplay: PropTypes.bool,
   dotnav: PropTypes.bool.isRequired,
+  description: PropTypes.string,
+  title: PropTypes.string,
+  fullSlider: PropTypes.bool.isRequired,
+  autoplay: PropTypes.bool.isRequired,
 };
 
 Carousel.defaultProps = {
   arrow: false,
+  dotnav: false,
   fullSlider: false,
   autoplay: false,
-  dotnav: false,
 };
 
 export default Carousel;

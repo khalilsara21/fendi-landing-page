@@ -5,7 +5,11 @@ import footer_d from "../../assets/images/footer-d.png";
 import "./footer.scss";
 
 function Footer() {
-  return <img src={footer_d} alt="Fendi Footer" className="footer" />;
+  return (
+    <footer id="footer" role="contentinfo">
+      <img src={footer_d} alt="Fendi Footer" className="footer" />
+    </footer>
+  );
 }
 
 export default Footer;

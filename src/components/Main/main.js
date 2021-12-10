@@ -30,9 +30,13 @@ function Main() {
   const isDesktop = windowSize.innerWidth > 959;
 
   return (
-    <>
+    <div>
       <Header />
-      <div className={`${isDesktop ? "uk-container" : ""}`}>
+      <div
+        className={`${isDesktop ? "uk-container" : ""}`}
+        data-uk-scrollspy="target: > div; cls: uk-animation-fade; delay: 150; repeat: true; hidden: true"
+        role="main"
+      >
         <Banner image={banner_top} image_alt="Fendi Banner Top" />
         <Title
           align="center"
@@ -67,7 +71,7 @@ function Main() {
         />
       </div>
       <Footer />
-    </>
+    </div>
   );
 }
 

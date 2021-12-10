@@ -5,7 +5,11 @@ import header_d from "../../assets/images/header-d.png";
 import "./header.scss";
 
 function Header() {
-  return <img src={header_d} alt="Fendi Header" className="header" />;
+  return (
+    <header role="banner">
+      <img src={header_d} alt="Fendi Header" className="header" />
+    </header>
+  );
 }
 
 export default Header;

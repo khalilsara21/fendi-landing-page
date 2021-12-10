@@ -6,7 +6,7 @@ import "./item.scss";
 function Item({ id, image, name, description, price, soldOut }) {
   return (
     <div className="item">
-      <img src={image} alt={name} />
+      <img src={image} alt={name + "_" + id} />
       <p className="name">{name}</p>
       {description && <span className="description">{description}</span>}
       <p className="price">{price}</p>
@@ -16,6 +16,7 @@ function Item({ id, image, name, description, price, soldOut }) {
 }
 
 Item.propTypes = {
+  id: PropTypes.number.isRequired,
   image: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   description: PropTypes.string,

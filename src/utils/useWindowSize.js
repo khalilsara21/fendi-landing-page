@@ -15,7 +15,6 @@ export function useWindowSize() {
   const handleResize = () => {
     const newSize = getSize();
 
-    // Check if something has changed
     for (let x in windowSize)
       if (windowSize[x] !== newSize[x]) {
         setWindowSize(getSize());

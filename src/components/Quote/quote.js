@@ -1,10 +1,14 @@
 import PropTypes from "prop-types";
 
+//Style
 import "./quote.scss";
 
 function Quote({ title, quote, author, className }) {
   return (
-    <div className={`uk-flex uk-flex-column quote-container ${className}`}>
+    <div
+      className={`uk-flex uk-flex-column quote-container ${className}`}
+      role="textbox"
+    >
       {title && (
         <h2 className="uk-text-center uk-text-uppercase title">{title}</h2>
       )}

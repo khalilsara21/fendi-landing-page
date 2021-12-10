@@ -3,9 +3,11 @@ import PropTypes from "prop-types";
 //Utils
 import { useWindowSize } from "../../utils/useWindowSize";
 
+//Components
+import Item from "./Item/item";
+
 //Style
 import "./gallery.scss";
-import Item from "./Item/item";
 
 function Gallery({ items }) {
   const windowSize = useWindowSize();
@@ -24,10 +26,11 @@ function Gallery({ items }) {
   const childWidth = getChildWidth();
 
   return (
-    <div className={`uk-grid uk-text-center gallery ${childWidth}`}>
+    <div className={`uk-grid uk-text-center gallery ${childWidth}`} role="list">
       {items.map((item) => (
         <Item
           key={item.id}
+          id={item.id}
           image={item.image}
           name={item.name}
           description={item.description}
